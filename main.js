@@ -4,42 +4,6 @@ const score = {
     wins: 0
 }
 
-// Pick a random Pokemon from 1 to 904
-function randomPokemon() {
-    return Math.floor(Math.random() * 904) + 1;
-}
-
-// Update scoreboard
-function updateScore() {
-    let scoreText = document.querySelector(".scoreboard > p:nth-child(2)");
-    scoreText.textContent = "Games Played: " + score.gamesPlayed;
-    let winsText = document.querySelector(".scoreboard > p:nth-child(3)");
-    winsText.textContent = "Wins: " + score.wins;
-};
-
-// Get Pokemon from API
-/*
-async function getPokemonAPI() {
-
-    let response = await fetch("https://pokeapi.co/api/v2/pokemon/" + pokemon[0] + "/");
-    let data = await response.json();
-
-    // Get its name and sprite
-    let pokemonName = data.name;
-    let pokemonSprite = data.sprites.front_default;
-    console.log("Name: " + pokemonName);
-    console.log("Sprite url: " + pokemonSprite);
-
-    let card1Sprite = document.querySelector("#card1-sprite");
-    let imgTag = document.createElement("img");
-    imgTag.src = pokemonSprite; // add the src link
-    imgTag.alt = pokemonName.toString(); // give it an alt tag
-    imgTag.classList.add("sprite"); // add a class of 'sprite'
-    card1Sprite.appendChild(imgTag)
-
-}
-*/
-
 async function showPokemon() {
     // Start array of Pokemon and assign the correct answer (by ID number)
     let pokemon = [];
@@ -125,3 +89,41 @@ async function showPokemon() {
 
 updateScore();
 showPokemon();
+
+// Pick a random Pokemon from 1 to 904
+function randomPokemon() {
+    return Math.floor(Math.random() * 904) + 1;
+}
+
+// Update scoreboard
+function updateScore() {
+    let scoreText = document.querySelector(".scoreboard > p:nth-child(2)");
+    scoreText.textContent = "Games Played: " + score.gamesPlayed;
+    let winsText = document.querySelector(".scoreboard > p:nth-child(3)");
+    winsText.textContent = "Wins: " + score.wins;
+};
+
+
+
+// Get Pokemon from API
+/*
+async function getPokemonAPI() {
+
+    let response = await fetch("https://pokeapi.co/api/v2/pokemon/" + pokemon[0] + "/");
+    let data = await response.json();
+
+    // Get its name and sprite
+    let pokemonName = data.name;
+    let pokemonSprite = data.sprites.front_default;
+    console.log("Name: " + pokemonName);
+    console.log("Sprite url: " + pokemonSprite);
+
+    let card1Sprite = document.querySelector("#card1-sprite");
+    let imgTag = document.createElement("img");
+    imgTag.src = pokemonSprite; // add the src link
+    imgTag.alt = pokemonName.toString(); // give it an alt tag
+    imgTag.classList.add("sprite"); // add a class of 'sprite'
+    card1Sprite.appendChild(imgTag)
+
+}
+*/

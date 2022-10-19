@@ -1,3 +1,13 @@
+body {
+    background-color: rgb(15, 80, 101);
+    color: white;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:x-large;
+}
+
 button {
     display: flex;
+    size:100px;
+    font-family: Arial, Helvetica, sans-serif;
 }
